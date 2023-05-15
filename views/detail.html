@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework Manager</title>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="index.html" class="brand-logo"><i class="material-icons left">donut_small</i>Krispy Kreme</a>
+            <ul class="right">
+                <li><a href="index"><i class="material-icons left">home</i> Home</a></li>
+                <li><a href="/assignments"><i class="material-icons left">list</i> Categories</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Materialize CSS and Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Additional custom CSS -->
+    <link rel="stylesheet" href="/stylesheets/assignmentsStyle.css">
+</head>
+
+<body>
+
+    <!-- Nav bar: Reference: https://materializecss.com/navbar.html -->
+    <!-- It is the same navbar as index.html (I just copy pasted it :D) -->
+    
+    <!-- Actual page content! -->
+    <div class="container">
+        <div class="section flow-text" id="details">
+            <h1>Doughnuts</h1>
+            <table>
+                <thead>
+                  <tr>
+                    <th>Popular Flavors</th>
+                    <th>Sprinkled (Y = yes, N = no)</th>
+                    <th>Continuing?</th>
+                    <th>Why or why not?</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Glazed</td>
+                    <td>N</td>
+                    <td><img width=100px src="up.jpg"> </td>
+                    <td>People love it. 95% of customers order it. </td>
+                    
+                  </tr>
+                  <tr>
+                    <td>Chocolate</td>
+                    <td>Y</td>
+                    <td><img width=50px src="down.jpg"></td>
+                    <td>People hate it. We got 50 complaints about it.</td>
+                  </tr>
+                  <tr>
+                    <td>Strawberry</td>
+                    <td>Y</td>
+                    <td><img width=100px src="up.jpg"></td>
+                    <td>Majority love it. Not a fan favorite but about 51% order it.</td>
+                  </tr>
+                  
+            
+            
+                </tbody>
+              </table>
+        
+            
+
+        <div class="section" id="controls">
+            <a class="btn-large waves-effect waves-light orange left modal-trigger" href="#edit">
+                <i class="material-icons right">edit</i>
+                Edit
+            </a>
+            <a class="btn-large waves-effect waves-light red right">
+                <i class="material-icons right">delete</i>
+                Delete
+            </a>
+        </div>
+
+
+        <div class="modal" id="edit">
+            <div class="modal-content">
+                <h3>Edit item:</h3>
+                <form id="updateForm">
+                    <div class="row">
+                        <div class="input-field col s8">
+                            <input type="text" id="titleInput" name="title" class="validate" data-length="45" required value="Glazed">
+                            <label for="titleInput">Name</label>
+                        </div>
+                        
+                        <div class="input-field col s6">
+                            <select type="number" id="subjectInput" name="Sprinkled">
+                                <option value="" disabled>Sprinkled:</option>
+                                <option value=1>Yes</option>
+                                <option value=2 selected>No</option>
+                              </select>
+                              <label for="subjectInput">Sprinkled:</label>
+                        </div>
+    
+                        <div class="input-field col s6">
+                            <select type="number" id="subjectInput" name="Continuing">
+                                <option value="" disabled>Continuing?</option>
+                                <option value=1>No</option>
+                                <option value=2 selected>Yes</option>
+                              </select>
+                              <label for="subjectInput">Continuing?</label>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <textarea class="materialize-textarea" id="descriptionInput" name="description" data-length="150">People love it. 95% of customers order it.</textarea>
+                            <label for="descriptionInput">Continuation: Why or why not?</label>
+                        </div>
+    
+                    </div>
+                </form>
+                <!-- A section for the footer of the modal -->
+                <div class="modal-footer">
+                    <!-- Since the submit button is not within the form, it must have the form attribute specified-->
+                    <button class="btn waves-effect waves-light " type="submit" form="updateForm">
+                        <i class="material-icons right">send</i>
+                        Submit
+                    </button>
+                    <button class="modal-close waves-effect waves-green btn-flat" >Never Mind</button>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Auto-initialize Materialize elements (Note - more specific initialization may be required for certain elements)-->
+    <script src="/scripts/materializeAutoInit.js"></script>
+
+</body>
+
+
+}
+
+</html>
